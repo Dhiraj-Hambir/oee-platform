@@ -1,0 +1,159 @@
+.notification-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1500;
+}
+
+.notification-popup {
+    position: fixed;
+    top: 11vh;
+    right: 2vw;
+    width: 25vw;
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 65vh;
+    background: #ffffff;
+    border-radius: 1.2vh;
+    box-shadow: 0 0.8vh 3.2vh rgba(0, 0, 0, 0.2);
+    z-index: 1600;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6vh 2vw;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 2vh;
+    font-weight: 600;
+    color: #111827;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2.2vh;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #111827;
+}
+
+.notification-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.8vh 0;
+}
+
+.notification-list::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 0.3vw;
+}
+
+.alarm-card {
+    display: flex;
+    gap: 1vw;
+    padding: 1.2vh 0.5vw;
+    margin: 1vh 1vw;
+    border-radius: 0.8vh;
+    background: #ffffff;
+    border-left: 6px solid transparent;
+    box-shadow: 0 0.4vh 1.6vh rgba(0, 0, 0, 0.08);
+}
+
+.alarm-left {
+    font-size: 2.2vh;
+    color: #6b7280;
+    margin-top: 0.4vh;
+}
+
+.alarm-content {
+    flex: 1;
+}
+
+.alarm-title {
+    font-size: 1.6vh;
+    font-weight: 600;
+    color: #111827;
+}
+
+.alarm-meta {
+    font-size: 1.4vh;
+    color: #6b7280;
+    margin-top: 0.3vh;
+}
+
+.alarm-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6vh;
+}
+
+.severity-badge {
+    padding: 0.3vh 0.8vw;
+    border-radius: 1vh;
+    font-size: 1.3vh;
+    font-weight: 600;
+}
+
+.severity-badge.warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.severity-badge.major {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.severity-badge.critical {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.alarm-time {
+    font-size: 1.2vh;
+    color: #9ca3af;
+}
+
+.notification-footer {
+    padding: 1.2vh 2vw;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.see-all-link {
+    color: #6366f1;
+    font-size: 1.6vh;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.see-all-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .notification-popup {
+        top: 10vh;
+        right: 5vw;
+        left: 5vw;
+        width: 90vw;
+        max-height: 80vh;
+    }
+}

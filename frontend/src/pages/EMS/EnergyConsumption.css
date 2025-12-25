@@ -1,0 +1,117 @@
+/* EnergyConsumption.css
+   ONLY styles for Energy Consumption section.
+   Units: vw / vh / % only.
+   Layout: 3 columns desktop, 2 columns <=1024, 1 column <=601.
+*/
+
+.energy-page-wrapper {
+  width: 100%;
+  padding: 2vh 1.5vw;
+  box-sizing: border-box;
+  display: flex;
+  background: transparent;
+}
+
+.energy-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6vh;
+  box-sizing: border-box;
+}
+
+.energy-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  padding: 0 0.2vw;
+}
+
+.energy-title {
+  font-size: 2.4vh;
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.energy-sub {
+  font-size: 1.4vh;
+  color: #666;
+}
+
+/* Grid: 3 / 2 / 1 columns as requested */
+.energy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6vw;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Card */
+.energy-card {
+  background: #ffffff;
+  border-radius: 0.8vw;
+  padding: 1.6vh 1.6vw;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  width: 23vw;
+  height: 32vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+/* Adjust card width based on left navigation toggle state */
+.left-nav.closed ~ .main-content .energy-card {
+  width: 31vw;
+}
+
+.left-nav.open ~ .main-content .energy-card {
+  width: 23vw;
+}
+
+/* Card head */
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2vh;
+}
+
+.card-title {
+  font-size: 1.6vh;
+  color: #333;
+  font-weight: 700;
+}
+
+.card-badge {
+  font-size: 1.2vh;
+  color: #666;
+  background: #f8f9fa;
+  padding: 0.6vh 1vw;
+  border-radius: 0.8vw;
+}
+
+/* Responsive layout: 2 columns when screen < 1024px */
+@media (max-width: 1024px) {
+  .energy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .energy-card,
+  .left-nav.closed ~ .main-content .energy-card,
+  .left-nav.open ~ .main-content .energy-card {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .energy-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+

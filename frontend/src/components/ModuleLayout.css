@@ -1,0 +1,141 @@
+.module-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+
+
+.module-sidebar {
+  background-color: #f8f9fa;
+  width: 250px;
+  transition: all 0.3s ease;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  height: calc(100vh - 10vh);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.module-sidebar.closed {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border-right: none;
+  overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .module-sidebar.closed {
+    display: none;
+  }
+}
+
+.module-sidebar-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.module-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-nav-list li {
+  margin-bottom: 8px;
+}
+
+.module-nav-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #333;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.module-nav-item:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.module-sidebar-placeholder {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+}
+
+.sidebar-hint {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #bbb;
+}
+
+.module-sidebar-footer {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.module-logout-button {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #dc3545;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.module-logout-button:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #c82333;
+}
+
+.module-logout-icon {
+  font-size: 1.1rem;
+}
+
+.module-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .module-sidebar {
+    position: fixed;
+    left: 0;
+    top: 10vh;
+    height: calc(100vh - 10vh);
+    width: 250px;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .module-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .module-sidebar.closed {
+    transform: translateX(-100%);
+    width: 250px;
+  }
+}

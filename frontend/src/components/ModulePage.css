@@ -1,0 +1,53 @@
+/* Light theme styles for module pages */
+.module-page-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+}
+
+.module-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 600px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.module-toggle-container h2 {
+  color: #333;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.module-toggle-container p {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .module-page-container {
+    padding: 1rem;
+  }
+
+  .module-toggle-container {
+    padding: 2rem;
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+

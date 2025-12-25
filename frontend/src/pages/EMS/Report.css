@@ -1,0 +1,254 @@
+.alert-setup-container {
+  padding: 1vh 1.5vw 2vh;
+  min-height: 90vh;
+  box-sizing: border-box;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.live-header {
+  margin-top: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2vh;
+  gap: 2vw;
+}
+
+.breadcrumb {
+  font-size: 2vh;
+  color: var(--text-main);
+}
+
+.breadcrumb span {
+  margin: 0 0.5vw;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20vw;
+  align-items: center;
+}
+
+.cluster-select {
+  padding: 0.5vh 1vw;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-size: 2vh;
+  height: 4vh;
+}
+
+.export-btn {
+  height: 4vh;
+  padding: 0 1.5vw;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+}
+
+.live-table-wrapper {
+  max-height: 65vh;
+ 
+  overflow: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-bg);
+  margin-top: 1vh;
+}
+
+.live-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%;
+  
+}
+
+.live-table thead {
+  position: sticky;
+  top: 0;
+  background: #3b82f6;
+  color: #ffffff;
+  z-index: 10;
+  height: 5vh;
+}
+
+.live-table th {
+  padding: 1vh 1vw;
+  font-size: 2vh;
+ 
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.live-table td {
+  padding: 1vh 1vw;
+  font-size: 1.8vh;
+ 
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  color: var(--text-main);
+}
+
+.live-table tbody tr:nth-child(even) {
+  background: var(--input-bg);
+}
+
+.badge {
+  padding: 0.4vh 0.8vw;
+  border-radius: 999px;
+  font-size: 1.6vh;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge.on {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.badge.off {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.badge.normal {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.badge.critical {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2vw;
+  padding: 1.5vh 0;
+  color: var(--text-main);
+  font-size: 2vh;
+  margin-top: 1vh;
+}
+
+.pagination-per-page {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.pagination-per-page select {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.2vh 0;
+  outline: none;
+  background: transparent;
+  font-size: 2vh;
+  color: inherit;
+  cursor: pointer;
+}
+
+.pagination-data {
+  color: var(--text-main);
+  font-size: 2vh;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 0.5vw;
+}
+
+.pg-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+  padding: 0.5vh;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4vh;
+  height: 4vh;
+  transition: background 0.2s;
+}
+
+.pg-btn svg {
+  width: 2.5vh;
+  height: 2.5vh;
+}
+
+.pg-btn:hover {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+}
+
+.pg-btn:disabled {
+  color: var(--border-color);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .live-header {
+    flex-wrap: wrap;
+  }
+
+  .header-actions {
+    gap: 2vw;
+  }
+
+  .live-table {
+    min-width: 140vw;
+    /* Allow scrolling on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .live-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vh;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2vw;
+  }
+
+  .cluster-select {
+    flex: 1;
+  }
+
+  .pagination-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vh;
+  }
+
+  .pagination-controls {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .badge {
+    font-size: 1.4vh;
+  }
+
+  .live-table th,
+  .live-table td {
+    font-size: 1.6vh;
+    padding: 1vh 2vw;
+  }
+}

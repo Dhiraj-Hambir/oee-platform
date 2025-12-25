@@ -1,0 +1,358 @@
+.emd-root {
+  --bg-main: #f9fafb;
+  --text-main: #111827;
+  --card-bg: #ffffff;
+  --border-color: #d1d5db;
+  --btn-bg: #ffffff;
+  --btn-text: #111827;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --muted-text: #9ca3af;
+  --green: #16a34a;
+  --red: #dc2626;
+  --motor-on: #6aa84f;
+  --motor-off: #dc2626;
+
+  width: 100%;
+  min-height: 100%;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.emd-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 2vh;
+}
+
+.emd-breadcrumb {
+  font-size: 1.8vh;
+  font-weight: 600;
+}
+
+.emd-actions {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.emd-select {
+  padding: 6px 10px;
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.emd-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.emd-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  top: 2px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.switch input:checked+.slider::before {
+  transform: translateX(20px);
+}
+
+.emd-top-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2vh;
+  margin-top: 4vh;
+}
+
+.emd-middle-row,
+.emd-bottom-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 2vh;
+  box-sizing: border-box;
+}
+
+.power-card,
+.hourly-card {
+  flex: 2;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.segment-card,
+.motor-card {
+  flex: 1;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.power-card h3,
+.hourly-card h3,
+.motor-card h3 {
+  margin-bottom: 12px;
+  padding-left: 2vh;
+  font-size: 2.5vh;
+}
+
+.segment-card h3 {
+  margin-bottom: 12px;
+  margin-top: 5vh;
+  padding-left: 2vh;
+  font-size: 2.5vh;
+}
+
+.chart-holder {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  position: relative;
+}
+
+.pie-holder {
+  margin-top: 1vh;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emd-kpi-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.emd-card {
+  background-color: white;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Keep it clean */
+}
+
+.power-card,
+.hourly-card {
+  padding: 10vh;
+}
+
+.emd-card.kpi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 110px;
+  box-shadow: 1px 1px 1px #e3d5d5;
+}
+
+.emd-card.kpi p {
+  font-size: 2vh;
+  color: var(--muted-text);
+  padding-left: 1.5vh;
+}
+
+.emd-card.kpi h2 {
+  font-size: 2vh;
+  margin-top: 4px;
+  padding-left: 1.5vh;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+.motor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1.6vh;
+  padding: 1vh 2vh;
+}
+
+.motor-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.motor-bar span {
+  width: 1.4vw;
+  height: 1.6vh;
+  min-width: 12px;
+  min-height: 14px;
+
+}
+
+.motor-bar .on {
+  background-color: var(--motor-on);
+}
+
+.motor-bar .off {
+  background-color: var(--motor-off);
+}
+
+@media (max-width: 1200px) {
+
+  .emd-middle-row,
+  .emd-bottom-row {
+    flex-direction: column;
+  }
+
+  .power-card,
+  .hourly-card,
+  .segment-card,
+  .motor-card {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .emd-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .emd-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .emd-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PDF Printing Overrides - Forces Desktop Layout */
+.emd-root.is-printing {
+  width: 1400px !important;
+  /* Fixed width for better capture */
+  padding: 40px !important;
+  background-color: var(--bg-main) !important;
+}
+
+.emd-root.is-printing .emd-kpi-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.emd-root.is-printing .emd-middle-row,
+.emd-root.is-printing .emd-bottom-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px !important;
+}
+
+.emd-root.is-printing .power-card,
+.emd-root.is-printing .hourly-card {
+  flex: 2 !important;
+  height: 500px !important;
+  padding: 20px !important;
+}
+
+.emd-root.is-printing .segment-card,
+.emd-root.is-printing .motor-card {
+  flex: 1 !important;
+  height: 500px !important;
+  padding: 20px !important;
+}
+
+.emd-root.is-printing .emd-card.kpi {
+  flex: 1 !important;
+  min-height: 110px !important;
+}
+
+.emd-root.is-printing .emd-card h3 {
+  font-size: 20px !important;
+}
+
+.emd-root.is-printing .emd-card p,
+.emd-root.is-printing .emd-card h2 {
+  font-size: 13px !important;
+}
+
+.emd-root.is-printing .motor-row span {
+  font-size: 13px !important;
+}
+
+.emd-root.is-printing .motor-bar span {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Force charts to fill their desktop-sized containers in the PDF */
+.emd-root.is-printing .chart-holder,
+.emd-root.is-printing .apexcharts-canvas,
+.emd-root.is-printing .apexcharts-svg,
+.emd-root.is-printing .apexcharts-canvas svg {
+  width: 100% !important;
+  height: 450px !important;
+}
+
+
+.emd-root.is-printing .segment-card .apexcharts-canvas,
+.emd-root.is-printing .segment-card .apexcharts-svg,
+.emd-root.is-printing .segment-card .apexcharts-canvas svg {
+  width: 100% !important;
+  height: 320px !important;
+}
+
+
+.emd-root.is-printing .emd-card h3 {
+  font-size: 18px !important;
+  margin-bottom: 15px !important;
+}

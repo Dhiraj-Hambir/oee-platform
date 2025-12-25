@@ -1,0 +1,229 @@
+.emd-select option {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}
+
+
+.main-block {
+    display: flex;
+    position: relative;
+}
+
+.first-block {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+}
+
+.second-block {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Overrides for Header Scaling (vh based) */
+.emd-breadcrumb {
+    font-size: 2.2vh !important;
+}
+
+.emd-select {
+    font-size: 1.6vh !important;
+    padding: 0.6vh 1.2vh !important;
+}
+
+.emd-btn {
+    font-size: 1.6vh !important;
+    padding: 0.6vh 1.4vh !important;
+}
+
+.emd-toggle span {
+    font-size: 2vh !important;
+}
+
+/* Switch Toggle Scaling */
+.switch {
+    width: 4.4vh !important;
+    height: 2.2vh !important;
+}
+
+.slider {
+    border-radius: 2.2vh !important;
+}
+
+.slider::before {
+    width: 1.8vh !important;
+    height: 1.8vh !important;
+    left: 0.2vh !important;
+    top: 0.2vh !important;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(2.2vh) !important;
+}
+
+
+/* Meter Selection Row */
+.meter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.3vh;
+    margin: 2.7vh 0 1.8vh 0;
+}
+
+.meter-btn {
+    font-weight: 600;
+    font-size: 1.6vh;
+    border: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 0.4vh 0.9vh;
+    border-radius: 0.4vh;
+    cursor: pointer;
+}
+
+.meter-dropdown {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.4vh;
+    padding: 0.6vh 1.1vh;
+    /* display: flex; */
+    /* align-items: center; */
+    gap: 0.9vh;
+    cursor: pointer;
+    color: var(--text-main);
+    font-size: 1.6vh;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.meter-dropdown option {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}
+
+/* KWH Card */
+.kwh-card {
+    background: var(--card-bg);
+
+    border-radius: 0.9vh;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 3.8vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kwh-title {
+    font-size: 1.78vh;
+    color: var(--text-main);
+    margin-bottom: 1.1vh;
+}
+
+.kwh-value {
+    font-size: 3.6vh;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+/* Chart Cards (Large) */
+.chart-card {
+    background: var(--card-bg);
+    padding: 2.2vh;
+    border-radius: 0.9vh;
+    box-shadow: var(--shadow);
+    height: 60.5vh;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2.7vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-header {
+    text-align: center;
+    margin-bottom: 1.1vh;
+}
+
+.chart-title {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1.8vh;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7vh;
+}
+
+.spacer-block {
+    height: 7.1vh;
+    margin-bottom: 2vh;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .main-block {
+        flex-direction: column;
+    }
+
+    .first-block,
+    .second-block {
+        width: 100%;
+    }
+
+    .spacer-block {
+        display: none !important;
+    }
+}
+
+@media (max-width: 690px) {
+
+    /* Mobile text readability overrides - prevent tiny text from small VH */
+    .meter-btn,
+    .meter-dropdown,
+    .chart-title {
+        font-size: 14px !important;
+        padding: 8px 12px;
+    }
+
+    .kwh-card {
+        height: auto;
+        padding: 24px;
+        min-height: 150px;
+    }
+
+    .kwh-title {
+        font-size: 16px;
+    }
+
+    .kwh-value {
+        font-size: 28px;
+    }
+
+    .chart-card {
+        height: auto;
+        min-height: 200px;
+
+        /* Reduced for less mobile clutter */
+        padding: 12px;
+    }
+
+    .emd-breadcrumb {
+        font-size: 18px !important;
+    }
+
+    .emd-select {
+        font-size: 14px !important;
+    }
+
+    .emd-btn {
+        font-size: 14px !important;
+    }
+
+    /* Stack items better */
+    .meter-row {
+        flex-wrap: wrap;
+    }
+}
