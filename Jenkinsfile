@@ -8,12 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/Dhiraj-Hambir/oee-platform.git'
-            }
-        }
-
         stage('Build Backend Image') {
             steps {
                 sh '''
