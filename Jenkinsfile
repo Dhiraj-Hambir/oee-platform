@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    
+
     environment {
         FRONTEND_IMAGE = "oee-frontend"
         BACKEND_IMAGE = "oee-backend"
